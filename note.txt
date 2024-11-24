@@ -1,0 +1,78 @@
+OPEN A NEW FOLDER FOR CREATION
+OPEN IT WITH VS-CODE
+CREATE A PYTHON FILE TO TEST
+GO TO THE TERMINAL
+    $where python
+COPY THE PATH TO THE PYTHON
+    $(Path to python) -m venv (VirtualEnv Folder Name).
+ACTIVATE VIRTUAL ENVIRONMENT
+    $...\virtualEnv\Scripts\activate.bat
+INSTALL DJANGO
+    $pip install django
+CREATE A PROJECT
+    $django-admin startproject PROJECTNAME .
+                                                    <START THE SERVER
+                                                    $python manage.py runserver>
+CREATE APPLICATION
+    $python manage.py startapp (App_name)
+GO TO TERMINAL AND ENTER THE FOLLOWING
+    $py manage.py migrate
+    $py manage.py createsuperuser
+        enter name
+        enter email (optional)
+        enter password
+        (Note: Password is blank and cannot be seenS)
+    $py manage.py runserver
+GO TO setting.py IN Project_Name
+    IN INSTALLED_APPS ADD
+        [
+        ...
+        'App_name',
+        ]
+GOT TO urls.py AND ADD
+    from application import views
+    OR
+    from application.views import index,...
+
+    IN urlpatterns ADD
+        path('',views.index),
+        path('create/',views.create),
+        OR
+        path('',index),
+        path('create/',create),
+GO TO THE APPLICATION
+    GO TO THE VIEWS AND ADD
+        def index(request):
+        return render(request, 'index.html') 
+
+ "go to nyfirstapp>views"
+ create index:
+    def index(request):
+    return render(request,'index.html')
+
+"in myfirstapp"
+create templates fplder
+inside templates create a file
+<html>
+  <p>hello world</p>
+</html>
+
+"in terminal"
+    py manage.py migrate
+    py manage.py createsuperuser
+        enter name
+        enter email (optional)
+        enter password
+        (Note: Password is blank and cannot be seenS)
+    py manage.py runserver
+
+"open web browser"
+    go to http://127.0.0.1:8000/admin/
+    enter your setted username and password
+    (welcome to backend)
+
+
+"go tol urls"
+in urlpatterns u can add the path like in http://127.0.0.1:8000/admin/
+admin/ leads to admin page
+if u want any function to be added then create it path('create/',create),
